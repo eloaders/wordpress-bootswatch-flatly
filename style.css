@@ -1,0 +1,158 @@
+/*
+Theme Name: DevDmBootstrap3
+Theme URI: http://devdm.com/DevDmBootstrap3
+Author: Danny Machal
+Author URI: http://devdm.com/
+Description: A versatile and responsive Bootstrap WordPress starter theme FOR DEVELOPERS based on Twitter Bootstrap 3.3.6.
+Version: 1.80
+License: GNU General Public License v3
+License URI: http://www.gnu.org/licenses/gpl.html
+Tags: one-column, two-columns, right-sidebar, fluid-layout, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, theme-options, translation-ready
+Text Domain: devdmbootstrap3
+
+devdmbootstrap3 WordPress Theme, Copyright 2016 Danny Machal.
+devdmbootstrap3 is distributed under the terms of the GNU GPL v3.
+*/
+
+/* The bootstrap.css file is auto-enqueued in functions.php */
+
+/* YOU SHOULD BE MAKING A CHILD THEME. Don't let me be a bad guy and erase all your hard work with a theme update. I just want to bring you new amazing features. I don't want to destroy your world. I've made a child theme available for you to use. Download it here http://devdm.com/DevDmBootstrap3/child-themes/ */
+
+/****************** Special Blank CSS classes for child themes to use without disturbing core bootstrap styles ****************/
+
+.dmbs-container {
+
+}
+
+.dmbs-header {
+
+}
+
+.dmbs-header-img {
+
+}
+
+.dmbs-header-text {
+
+}
+
+.dmbs-top-menu {
+
+}
+
+.dmbs-content {
+
+}
+
+.dmbs-main {
+
+}
+
+.dmbs-left {
+
+}
+
+.dmbs-right {
+
+}
+
+.dmbs-footer-menu {
+
+}
+
+.dmbs-author-credits {
+
+}
+
+.dmbs-footer {
+
+}
+
+.timeline {
+    position: relative;
+    padding: 21px 0px 10px;
+    margin-top: 4px;
+    margin-bottom: 30px;
+}
+
+.timeline .line {
+    position: absolute;
+    width: 4px;
+    display: block;
+    background: currentColor;
+    top: 0px;
+    bottom: 0px;
+    margin-left: 30px;
+}
+
+.timeline .separator {
+    border-top: 1px solid currentColor;
+    padding: 5px;
+    padding-left: 40px;
+    font-style: italic;
+    font-size: .9em;
+    margin-left: 30px;
+}
+
+.timeline .line::before { top: -4px; }
+.timeline .line::after { bottom: -4px; }
+.timeline .line::before,
+.timeline .line::after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    width: 12px;
+    height: 12px;
+    display: block;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.timeline .panel {
+    position: relative;
+    margin: 10px 0px 21px 70px;
+    clear: both;
+}
+
+.timeline .panel::before {
+    position: absolute;
+    display: block;
+    top: 8px;
+    left: -24px;
+    content: '';
+    width: 0px;
+    height: 0px;
+    border: inherit;
+    border-width: 12px;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+}
+
+.timeline .panel .panel-heading.icon * { font-size: 20px; vertical-align: middle; line-height: 40px; }
+.timeline .panel .panel-heading.icon {
+    position: absolute;
+    left: -59px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 0px;
+    border-radius: 50%;
+    text-align: center;
+    float: left;
+}
+
+.timeline .panel-outline {
+    border-color: transparent;
+    background: transparent;
+    box-shadow: none;
+}
+
+.timeline .panel-outline .panel-body {
+    padding: 10px 0px;
+}
+
+.timeline .panel-outline .panel-heading:not(.icon),
+.timeline .panel-outline .panel-footer {
+    display: none;
+}
