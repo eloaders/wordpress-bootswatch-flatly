@@ -114,112 +114,37 @@ function optionsframework_options() {
 	$imagepath =  get_template_directory_uri() . '/inc/admin/images/';
 
 	$options = array();
-	
-	//Settings for Basic Settings Tab
-	$options[] = array(
-		'name' => __('Basic Settings', 'options_check'),
+    
+    $options[] = array(
+		'name' => __('Jumbotron', 'options_check'),
 		'type' => 'heading');
-		
-	$options[] = array(
-		'name' => "Theme Style",
-		'desc' => "These are the beautiful color theme styles you can choose from for your website.",
-		'id' => "theme_style",
-		'std' => "default",
-		'type' => "images",
-		'options' => array(
-			'default' => $imagepath . 'default-style.png',
-			'style1' => $imagepath . 'style1.png',
-			'style2' => $imagepath . 'style2.png',
-			'style3' => $imagepath . 'style3.png',
-			'style4' => $imagepath . 'style4.png')
-	);			
-	
-	$options[] = array(
-		'name' =>  __('Header Background', 'options_check'),
-		'desc' => __('Change the header background CSS. Recommended Sizes 1216x105', 'options_check'),
-		'id' => 'site_header_background',
-		'std' => $background_defaults,
-		'type' => 'background' );		
-		
-	$options[] = array(
-		'name' =>  __('Body Background', 'options_check'),
-		'desc' => __('Change the body background CSS.', 'options_check'),
-		'id' => 'body_background',
-		'std' => $background_defaults,
-		'type' => 'background' );		
-		
-	$options[] = array(
-		'name' => __('Site Logo', 'options_check'),
-		'desc' => __('If set this will be used as your sites logo. Recommended Sizes 200x99, 250x99', 'options_check'),
-		'id' => 'site_logo',
-		'type' => 'upload');			
-		
-	$options[] = array(
-		'name' => __('Theme Layout', 'options_check'),
-		'desc' => __('This option allows you to set theme layout Boxed or Full Width/Wide.', 'options_check'),
-		'id' => 'theme_layout',
-		'std' => 'Boxed',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $theme_layout_array);			
-		
-	$options[] = array(
-		'name' => "Page Layout",
-		'desc' => "These are layouts for your posts & archive. Pages will follow different templates that are available in template dropdown.",
-		'id' => "page_layouts",
-		'std' => "content-sidebar",
-		'type' => "images",
-		'options' => array(
-			'full-width' => $imagepath . 'full-width.png',
-			'sidebar-content' => $imagepath . 'sidebar-content.png',
-			'content-sidebar' => $imagepath . 'content-sidebar.png',
-			'sidebar-content-sidebar' => $imagepath . 'sidebar-content-sidebar.png',
-			'sidebar-sidebar-content' => $imagepath . 'sidebar-sidebar-content.png',
-			'content-sidebar-sidebar' => $imagepath . 'content-sidebar-sidebar.png')
-	);		
-	
-	$options[] = array(
-		'name' => __('Wider Sidebar', 'options_check'),
-		'desc' => __('If this option is set to Yes, the sidebar will be little wider. This setting is applicable on 2 column layout only.', 'options_check'),
-		'id' => 'wider_sidebar',
-		'std' => 'No',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $wider_sidebar);		
-	
-	
-	
-	$options[] = array(
-		'name' => __('Widget Areas in Extended Footer', 'options_check'),
-		'desc' => __('This option allows you to set how many widget areas you want in footer. Default is 3.', 'options_check'),
-		'id' => 'extended_footer_count',
-		'std' => '3',
-		'type' => 'select',
-		'class' => 'mini', //mini, tiny, small
-		'options' => $theme_footer_widgets);			
-	
-
-	$options[] = array(
-		'name' => __('Copyright Text', 'options_check'),
-		'desc' => __('Your sites copyright statement.', 'options_check'),
-		'id' => 'copyright_text',
-		'std' => '&copy; All rights reserved.',
+    
+    $options[] = array(
+		'name' => __('h1 Text', 'options_check'),
+		'desc' => __('Set main text ', 'options_check'),
+		'id' => 'jumbotron_main_text',
+		'std' => '',
 		'type' => 'text');
-		
-	$options[] = array(
-		'name' => __('Header Contact Phone', 'options_check'),
-		'desc' => __('Your contact phone will be displayed on header top left area.', 'options_check'),
-		'id' => 'header_contact_phone',
+    
+    $options[] = array(
+		'name' => __('Jumbotron long Text', 'options_check'),
+		'desc' => __('Set long text ', 'options_check'),
+		'id' => 'jumbotron_long_text',
 		'std' => '',
-		'type' => 'text');		
-		
-	$options[] = array(
-		'name' => __('Header Contact Mail', 'options_check'),
-		'desc' => __('Your contact mail will be displayed on header top left area.', 'options_check'),
-		'id' => 'header_contact_mail',
-		'std' => '',
-		'type' => 'text');				
-		
+		'type' => 'text');
+    
+    $options[] = array(		
+		'desc' => __('Set title for Jumbotron Button.', 'options_check'),
+		'id' => 'jumbotron_button_title',
+		'std' => 'Install',
+		'type' => 'text');	
+    
+    $options[] = array(		
+		'desc' => __('Link for Jumbotron Button', 'options_check'),
+		'id' => 'jumbotron_button_link',
+		'type' => 'select',
+		'options' => $options_pages);	
+    
 	$options[] = array(
 		'name' => __('Front Page Settings', 'options_check'),
 		'type' => 'heading');	
@@ -364,53 +289,6 @@ function optionsframework_options() {
 		'id' => 'slider_image_button_4_link',
 		'type' => 'select',
 		'options' => $options_pages);		
-		
-	$options[] = array(
-		'name' => __('Blurb Settings - Following section allows you to configure your blurb on front page.', 'options_check'),
-		'desc' => __('<b>Following section will allow you to set text and button settings</b>', 'options_check'),
-		'type' => 'info');				
-		
-	$options[] = array(
-		//'name' => __('Check to display Blurb Text on home page.', 'options_check'),
-		'desc' => __('Check to display Blurb on home page.', 'options_check'),
-		'id' => 'display_blurb',
-		'std' => '1',
-		'type' => 'checkbox');		
-		
-	$options[] = array(
-		//'name' => __('Blurb Text', 'options_check'),
-		'desc' => __('Enter text here to be displayed in Blurb Heading.', 'options_check'),
-		'id' => 'blurb_heading',
-		'std' => 'Hello World!',
-		'type' => 'text');			
-		
-	$options[] = array(
-		//'name' => __('Blurb Text', 'options_check'),
-		'desc' => __('Enter text here to be displayed in Blurb Section.', 'options_check'),
-		'id' => 'blurb_text',
-		'std' => 'Welcome to Our Agency. We specialize in Web Design and Development. Check out our outstanding portfolio, and get in touch with Us!',
-		'type' => 'textarea');	
-
-	$options[] = array(
-		//'name' => __('Check to display Blurb Button.', 'options_check'),
-		'desc' => __('Check to display Blurb Button.', 'options_check'),
-		'id' => 'display_blurb_button',
-		'std' => '1',
-		'type' => 'checkbox');		
-		
-	$options[] = array(
-		//'name' => __('Blurb Button Title', 'options_check'),
-		'desc' => __('Set title for Blurb Button.', 'options_check'),
-		'id' => 'blurb_button_title',
-		'std' => 'Get In Touch',
-		'type' => 'text');		
-		
-	$options[] = array(
-		//'name' => __('Select a Page to link to Blurb Button', 'options_check'),
-		'desc' => __('Link for Blurb Button', 'options_check'),
-		'id' => 'blurb_button_link_page',
-		'type' => 'select',
-		'options' => $options_pages);	
 
 	$options[] = array(
 		'name' => __('Widget Areas in Front Page', 'options_check'),
@@ -420,40 +298,6 @@ function optionsframework_options() {
 		'type' => 'select',
 		'class' => 'mini', //mini, tiny, small
 		'options' => $theme_footer_widgets);			
-		
-		
-	//Settings for Adding custom css/js code in head or footer
-	$options[] = array(
-		'name' => __('Custom Codes', 'options_check'),
-		'type' => 'heading');			
-
-	$options[] = array(
-		'name' => __('Code Setting', 'options_check'),
-		'desc' => __('Check to add following CSS in Header Section', 'options_check'),
-		'id' => 'add_code_in_wp_head',
-		'std' => '1',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		
-		'desc' => __('Code to add in header.', 'options_check'),
-		'id' => 'code_for_wp_head',
-		'std' => '',
-		'type' => 'textarea');			
-		
-	$options[] = array(
-		
-		'desc' => __('Check to add following code in Footer section', 'options_check'),
-		'id' => 'add_code_in_wp_footer',
-		'std' => '1',
-		'type' => 'checkbox');				
-		
-	$options[] = array(
-		
-		'desc' => __('Code to add in footer.', 'options_check'),
-		'id' => 'code_for_wp_footer',
-		'std' => '',
-		'type' => 'textarea');
 		
 	$options[] = array(
 		'name' => __('Misc Settings', 'options_check'),
@@ -466,13 +310,6 @@ function optionsframework_options() {
 		'id' => 'favicon_url',
 		'std' => '',
 		'type' => 'text');			
-		
-	$options[] = array(
-		'name' => __('Display Search Icon in Nav Menu', 'options_check'),
-		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'options_check'),
-		'id' => 'display_nav_search',
-		'std' => '1',
-		'type' => 'checkbox');		
     /**
     * Footer navbar options
     *
@@ -553,224 +390,6 @@ function optionsframework_options() {
 		'type' => 'checkbox');	
 	
 	$options[] = array(
-		'name' => __('I-Nex Settings', 'options_check'),
-		'type' => 'heading');
-		
-	$options[] = array(
-		'name' => __('I-Nex Version:', 'options_check'),
-		'id' => 'config_inex_app_version',
-		'std' => '',
-		'type' => 'text');
-
-        $options[] = array(
-		'name' => __('I-Nex Version Arch Linux:', 'options_check'),
-		'id' => 'config_inex_app_version_arch',
-		'std' => '',
-		'type' => 'text');
-
-        $options[] = array(
-		'name' => __('I-Nex Version Manjaro:', 'options_check'),
-		'id' => 'config_inex_app_version_manjaro',
-		'std' => '',
-		'type' => 'text');
-
-        $options[] = array(
-		'name' => __('I-Nex Version Linux Mint:', 'options_check'),
-		'id' => 'config_inex_app_version_linux_mint',
-		'std' => '',
-		'type' => 'text');
-
-        $options[] = array(
-		'name' => __('I-Nex Version Ubuntu:', 'options_check'),
-		'id' => 'config_inex_app_version_ubuntu',
-		'std' => '',
-		'type' => 'text');
-
-        $options[] = array(
-		'name' => __('I-Nex Version Fedora:', 'options_check'),
-		'id' => 'config_inex_app_version_fedora',
-		'std' => '',
-		'type' => 'text');
-
-        $options[] = array(
-		'name' => __('I-Nex Version OpenSUSE:', 'options_check'),
-		'id' => 'config_inex_app_version_opensuse',
-		'std' => '',
-		'type' => 'text');
-	
-	$options[] = array(
-		'name' => __('I-Nex Version Slackware:', 'options_check'),
-		'id' => 'config_inex_app_version_slackware',
-		'std' => '',
-		'type' => 'text');
-		
-	$options[] = array(
-		'name' => __('Install Text:', 'options_check'),
-		'id' => 'install_text',
-		'std' => '',
-		'type' => 'text');
-		
-	$options[] = array(
-		'desc' => __('Display Arch Linux Download.', 'options_check'),
-		'id' => 'display_arch_linux_download',
-		'std' => '1',
-		'type' => 'checkbox');
-	
-	$options[] = array(
-		'desc' => __('Display Manjaro Linux Download.', 'options_check'),
-		'id' => 'display_manjaro_linux_download',
-		'std' => '1',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		'desc' => __('Display Linux Mint Download.', 'options_check'),
-		'id' => 'display_linux_mint_download',
-		'std' => '1',
-		'type' => 'checkbox');
-
-        $options[] = array(
-		'desc' => __('Display Ubuntu Download.', 'options_check'),
-		'id' => 'display_ubuntu_download',
-		'std' => '1',
-		'type' => 'checkbox');
-		
-	$options[] = array(
-		'desc' => __('Display Fedora Download.', 'options_check'),
-		'id' => 'display_fedora_linux_download',
-		'std' => '1',
-		'type' => 'checkbox');
-	
-	$options[] = array(
-		'desc' => __('Display OpenSUSE Download.', 'options_check'),
-		'id' => 'display_opensuse_download',
-		'std' => '1',
-		'type' => 'checkbox');
-	
-	$options[] = array(
-		'desc' => __('Display Slackware Download.', 'options_check'),
-		'id' => 'display_slackware_download',
-		'std' => '1',
-		'type' => 'checkbox');	
-
-	$options[] = array(
-		'desc' => __('Display Source Download.', 'options_check'),
-		'id' => 'display_source_download',
-		'std' => '1',
-		'type' => 'checkbox');
-	
-	$options[] = array(
-		'name' => __('Distro Stickers', 'options_check'),
-		'type' => 'heading');
-		
-	$options[] = array(
-		'name' => __('Arch Linux Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'arch_linux_sticker',
-		'type' => 'upload');
-	
-	$options[] = array(
-		'name' => __('Manjaro Linux Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'manjaro_linux_sticker',
-		'type' => 'upload');
-	
-	$options[] = array(
-		'name' => __('Linux Mint Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'linux_mint_sticker',
-		'type' => 'upload');
-        
-        $options[] = array(
-		'name' => __('Ubuntu Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'ubuntu_sticker',
-		'type' => 'upload');
-	
-	$options[] = array(
-		'name' => __('Fedora Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'fedora_sticker',
-		'type' => 'upload');
-	
-	$options[] = array(
-		'name' => __('OpenSUSE Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'opensuse_sticker',
-		'type' => 'upload');
-	
-	$options[] = array(
-		'name' => __('Slackware Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'slackware_sticker',
-		'type' => 'upload');
-		
-	$options[] = array(
-		'name' => __('Source/Git Sticker', 'options_check'),
-		'desc' => __('', 'options_check'),
-		'id' => 'src_git_sticker',
-		'type' => 'upload');
-	
-	$options[] = array(
-		'name' => __('Install Text Instructions', 'options_check'),
-		'type' => 'heading' );
-
-	/**
-	 * For $settings options see:
-	 * http://codex.wordpress.org/Function_Reference/wp_editor
-	 *
-	 * 'media_buttons' are not supported as there is no post to attach items to
-	 * 'textarea_name' is set by the 'id' you choose
-	 */
-
-	$options[] = array(
-		'name' => __('Arch Linux Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for Arch Linux', 'options_check'),
-		'id' => 'arch_linux_install_instructions',
-		'type' => 'editor');
-
-	$options[] = array(
-		'name' => __('Manjaro Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for Manjaro', 'options_check'),
-		'id' => 'manjaro_install_instructions',
-		'type' => 'editor');
-	
-	$options[] = array(
-		'name' => __('Linux Mint Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for Linux Mint', 'options_check'),
-		'id' => 'linux_mint_install_instructions',
-		'type' => 'editor');
-        
-        $options[] = array(
-		'name' => __('Ubuntu Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for Ubuntu', 'options_check'),
-		'id' => 'ubuntu_install_instructions',
-		'type' => 'editor');
-		
-	$options[] = array(
-		'name' => __('Fedora Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for Fedora', 'options_check'),
-		'id' => 'fedora_install_instructions',
-		'type' => 'editor');
-		
-	$options[] = array(
-		'name' => __('OpenSUSE Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for OpenSUSE', 'options_check'),
-		'id' => 'opensuse_install_instructions',
-		'type' => 'editor');
-	
-	$options[] = array(
-		'name' => __('Slackware Install Instructions', 'options_check'),
-		'desc' => __('Instalation instructions for OpenSUSE', 'options_check'),
-		'id' => 'slackware_install_instructions',
-		'type' => 'editor');
-	
-	$options[] = array(
-		'name' => __('Source Code Instructions', 'options_check'),
-		'desc' => __('Instructions for Source Code', 'options_check'),
-		'id' => 'source_code_install_instructions',
-		'type' => 'editor');
-	
-	$options[] = array(
 		'name' => __('Banners', 'options_check'),
 		'type' => 'heading');
 		
@@ -786,5 +405,33 @@ function optionsframework_options() {
 		'std' => '',
 		'type' => 'textarea');	
 	
+    $options[] = array(
+		'name' => __('Social Icons', 'options_check'),
+		'type' => 'heading');
+		
+        $options[] = array(
+		'desc' => __('Display Github icon.', 'options_check'),
+		'id' => 'display_github_icon',
+		'std' => '1',
+		'type' => 'checkbox');
+		
+        $options[] = array(
+        'name' => __('Github URL:', 'options_check'),
+        'id' => 'github_url',
+        'std' => '',
+        'type' => 'text');
+
+        $options[] = array(
+		'desc' => __('Display Facebook icon.', 'options_check'),
+		'id' => 'display_facebook_icon',
+		'std' => '1',
+		'type' => 'checkbox');
+		
+        $options[] = array(
+        'name' => __('Facebook URL:', 'options_check'),
+        'id' => 'facebook_url',
+        'std' => '',
+        'type' => 'text');
+		
 	return $options;
 }

@@ -1,13 +1,13 @@
 <?php
 
-load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages' );
+load_theme_textdomain( 'wordpress_bootstrap_flatly', get_template_directory() . '/languages' );
 
 /////////////////////////////////////////////////////////////////////
-// Add DevDm Theme Options to the Appearance Menu and Admin Bar
+// Add Wordpress Bootstrap Flatly Theme Options to the Appearance Menu and Admin Bar
 ////////////////////////////////////////////////////////////////////
 
     function dmbs_theme_options_menu() {
-        add_theme_page( 'DevDm Theme' . __('Options','devdmbootstrap3'), 'DevDm' . __('Options','devdmbootstrap3'), 'manage_options', 'devdm-theme-options', 'devdm_theme_options' );
+        add_theme_page( 'Wordpress Bootstrap Flatly' . __('Options','wordpress_bootstrap_flatly'), 'Wbf' . __('Options','wordpress_bootstrap_flatly'), 'manage_options', 'Wbf-theme-options', 'Wbf_theme_options' );
     }
     add_action( 'admin_menu', 'dmbs_theme_options_menu' );
 
@@ -15,10 +15,10 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
     function toolbar_link_to_dmbs_options( $wp_admin_bar ) {
         $args = array(
-            'id'    => 'devdm_theme_options',
-            'title' => __('I-Nex Theme Options','devdmbootstrap3'),
-            'href'  => home_url() . '/wp-admin/themes.php?page=devdm-theme-options',
-            'meta'  => array( 'class' => 'devdm-theme-options' ),
+            'id'    => 'Wbf_theme_options',
+            'title' => __('I-Nex Theme Options','wordpress_bootstrap_flatly'),
+            'href'  => home_url() . '/wp-admin/themes.php?page=Wbf-theme-options',
+            'meta'  => array( 'class' => 'Wbf-theme-options' ),
             'parent' => 'site-name'
         );
         $wp_admin_bar->add_node( $args );
@@ -28,10 +28,10 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 // Add admin.css enqueue
 ////////////////////////////////////////////////////////////////////
 
-    function devdm_theme_style() {
-        wp_enqueue_style('devdm-theme', get_template_directory_uri() . '/css/admin.css');
+    function Wbf_theme_style() {
+        wp_enqueue_style('Wbf-theme', get_template_directory_uri() . '/css/admin.css');
     }
-    add_action('admin_enqueue_scripts', 'devdm_theme_style');
+    add_action('admin_enqueue_scripts', 'Wbf_theme_style');
 
 ////////////////////////////////////////////////////////////////////
 // Custom background theme support
@@ -54,7 +54,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'wheel' => array(
             'url' => '%s/img/deafaultlogo.png',
             'thumbnail_url' => '%s/img/deafaultlogo.png',
-            'description' => __( 'Your Business Name', 'devdmbootstrap3' )
+            'description' => __( 'Your Business Name', 'wordpress_bootstrap_flatly' )
         ))
 
     );
@@ -70,11 +70,11 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
         'uploads'                => true,
         'wp-head-callback'       => '',
         'admin-head-callback'    => '',
-        'admin-preview-callback' => 'devdm_admin_header_image',
+        'admin-preview-callback' => 'Wbf_admin_header_image',
     );
     add_theme_support( 'custom-header', $defaults );
 
-    function devdm_admin_header_image() { ?>
+    function Wbf_admin_header_image() { ?>
 
         <div id="headimg">
             <?php
@@ -236,7 +236,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 // Display Options Page
 ////////////////////////////////////////////////////////////////////
 
-    function devdm_theme_options() {
+    function Wbf_theme_options() {
 
     if ( !current_user_can( 'manage_options' ) )  {
         wp_die('You do not have sufficient permissions to access this page.');
@@ -250,11 +250,11 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
         <div class="wrap">
 
-        <div class="dm-logo-wrap"><a href="<?php echo $developer_uri ?>" target="_blank"><img src="<?php echo $logo; ?>" class="dm-logo" title="Created by Danny Machal @ DevDm.com" /></a></div>
+        <div class="dm-logo-wrap"><a href="<?php echo $developer_uri ?>" target="_blank"><img src="<?php echo $logo; ?>" class="dm-logo" title="Created by Michał Głowienka" /></a></div>
 
             <div class="icon32" id="icon-options-general"></div>
 
-            <h2><a href="<?php echo $developer_uri ?>" target="_blank">DevDmBootstrap3</a></h2>
+            <h2><a href="<?php echo $developer_uri ?>" target="_blank">wordpress_bootstrap_flatly</a></h2>
 
                <?php
 
@@ -266,7 +266,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
                <?php if ( false !== $_REQUEST['settings-updated'] ) : ?>
 
-               <div class='saved'><p><strong><?php _e('Options Saved!','devdmbootstrap3') ;?></strong></p></div>
+               <div class='saved'><p><strong><?php _e('Options Saved!','wordpress_bootstrap_flatly') ;?></strong></p></div>
 
                <?php endif; ?>
 
@@ -279,14 +279,14 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
 
                 <table cellpadding='10'>
 
-                    <tr valign="top"><th scope="row"><?php _e('Right Sidebar','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Right Sidebar','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <input type="checkbox" id="right_sidebar" name="dm_options[right_sidebar]" value="1" <?php checked( true, $settings['right_sidebar'] ); ?> />
-                            <label for="right_sidebar"><?php _e('Show the Right Sidebar','devdmbootstrap3') ;?></label>
+                            <label for="right_sidebar"><?php _e('Show the Right Sidebar','wordpress_bootstrap_flatly') ;?></label>
                         </td>
                     </tr>
 
-                    <tr valign="top"><th scope="row"><?php _e('Right Sidebar Size','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Right Sidebar Size','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                     <?php foreach( $dm_sidebar_sizes as $sizes ) : ?>
                         <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[right_sidebar_width]" value="<?php echo esc_attr($sizes['value']); ?>" <?php checked( $settings['right_sidebar_width'], $sizes['value'] ); ?> />
@@ -295,14 +295,14 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                         </td>
                     </tr>
 
-                    <tr valign="top"><th scope="row"><?php _e('Left Side Bar','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Left Side Bar','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <input type="checkbox" id="left_sidebar" name="dm_options[left_sidebar]" value="1" <?php checked( true, $settings['left_sidebar'] ); ?> />
-                            <label for="left_sidebar"><?php _e('Show the Left Sidebar','devdmbootstrap3') ;?></label>
+                            <label for="left_sidebar"><?php _e('Show the Left Sidebar','wordpress_bootstrap_flatly') ;?></label>
                         </td>
                     </tr>
 
-                    <tr valign="top"><th scope="row"><?php _e('Left Sidebar Size','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Left Sidebar Size','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <?php foreach( $dm_sidebar_sizes as $sizes ) : ?>
                                 <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[left_sidebar_width]" value="<?php echo esc_attr($sizes['value']); ?>" <?php checked( $settings['left_sidebar_width'], $sizes['value'] ); ?> />
@@ -311,7 +311,7 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                         </td>
                     </tr>
                     
-                    <tr valign="top"><th scope="row"><?php _e('Blog Post Size','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Blog Post Size','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <?php foreach( $dm_blog_posts_sizes as $sizes ) : ?>
                                 <input type="radio" id="<?php echo $sizes['value']; ?>" name="dm_options[blog_posts_size]" value="<?php echo esc_attr($sizes['value']); ?>" <?php checked( $settings['blog_posts_size'], $sizes['value'] ); ?> />
@@ -320,31 +320,31 @@ load_theme_textdomain( 'devdmbootstrap3', get_template_directory() . '/languages
                         </td>
                     </tr>
                     
-                    <tr valign="top"><th scope="row"><?php _e('Show Header','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Show Header','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <input type="checkbox" id="show_header" name="dm_options[show_header]" value="1" <?php checked( true, $settings['show_header'] ); ?> />
-                            <label for="show_header"><?php _e('Show The Main Header in the Template (logo/sitename/etc.)','devdmbootstrap3') ;?></label>
+                            <label for="show_header"><?php _e('Show The Main Header in the Template (logo/sitename/etc.)','wordpress_bootstrap_flatly') ;?></label>
                         </td>
                     </tr>
 
-                    <tr valign="top"><th scope="row"><?php _e('Show Post Meta','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Show Post Meta','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <input type="checkbox" id="show_postmeta" name="dm_options[show_postmeta]" value="1" <?php checked( true, $settings['show_postmeta'] ); ?> />
-                            <label for="show_postmeta"><?php _e('Show Post Meta data (author, category, date created)','devdmbootstrap3') ;?></label>
+                            <label for="show_postmeta"><?php _e('Show Post Meta data (author, category, date created)','wordpress_bootstrap_flatly') ;?></label>
                         </td>
                     </tr>
 
-                    <tr valign="top"><th scope="row"><?php _e('Give Danny His Credit?','devdmbootstrap3') ;?></th>
+                    <tr valign="top"><th scope="row"><?php _e('Give Michał His Credit?','wordpress_bootstrap_flatly') ;?></th>
                         <td>
                             <input type="checkbox" id="author_credits" name="dm_options[author_credits]" value="1" <?php checked( true, $settings['author_credits'] ); ?> />
-                            <label for="author_credits"><?php _e('Show me some love and keep a link to DevDm.com in your footer.','devdmbootstrap3') ;?></label>
+                            <label for="author_credits"><?php _e('Show me some love and keep a link to i-nex.linux.pl in your footer.','wordpress_bootstrap_flatly') ;?></label>
                         </td>
                     </tr>
 
                 </table>
 
                 <p class="submit">
-                    <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','devdmbootstrap3'); ?>" />
+                    <input name="Submit" type="submit" class="button-primary" value="<?php esc_attr_e('Save Changes','wordpress_bootstrap_flatly'); ?>" />
                 </p>
 
             </form>

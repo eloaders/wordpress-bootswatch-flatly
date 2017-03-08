@@ -4,7 +4,7 @@
             global $dm_settings;
             if ($dm_settings['author_credits'] != 0) : ?>
                 <div class="container">
-                    <p class="pull-left"><a href="<?php global $developer_uri; echo esc_url($developer_uri); ?>">DevDmBootstrap3 <?php _e('created by','devdmbootstrap3') ?> Danny Machal</a></p>
+                    <p class="pull-left"><a href="<?php global $developer_uri; echo esc_url($developer_uri); ?>">wordpress_bootstrap_flatly <?php _e('created by','wordpress_bootstrap_flatly') ?> Danny Machal</a></p>
                 </div>
         <?php endif; ?>
 

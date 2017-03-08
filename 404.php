@@ -4,20 +4,41 @@
 
 <?php get_template_part('template-part', 'topnav'); ?>
 
-    <!-- start content container -->
-    <div class="row dmbs-content">
-
-        <?php //left sidebar ?>
-        <?php get_sidebar( 'left' ); ?>
-
-        <div class="col-md-<?php devdmbootstrap3_main_content_width(); ?> dmbs-main">
-         <h1><?php _e('Sorry This Page Does Not Exist!','devdmbootstrap3'); ?></h1>
+<div class="container">
+  <br>
+  <br>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="text-center">
+          <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Oops:
+          <small>Page not found - <b>404 error</b></small>
+          </h3>
         </div>
+        <div class="panel-body">
+          <p>The page you are looking for might have been removed, had its name changed, or is temporarily unavailable. Please try the following:</p>
 
-        <?php //get the right sidebar ?>
-        <?php get_sidebar( 'right' ); ?>
+            <ul class="list-group">
+              <li class="list-group-item">Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
+              <li class="list-group-item">If you reached this page by clicking a link,
+                <a href="#"><b>contwordpress_bootstrap_flatlyact us</b></a> to alert us that the link is incorrectly formatted.</li>
+                <li class="list-group-item">Forget that this ever happened, and go <a href="/">our <b>Home</b> page</a> :)</li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
 
+      </div>
     </div>
-    <!-- end content container -->
+      <br>
+  <br>
+  <br>
+  <br>
+</div>
 
 <?php get_footer(); ?>

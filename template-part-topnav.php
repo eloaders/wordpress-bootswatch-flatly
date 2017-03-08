@@ -16,18 +16,22 @@
                         <a class="navbar-brand" href="<?php echo of_get_option('navbar_brand_url'); ?>"><?php echo of_get_option('navbar_brand_text'); ?></a>
                         <?php endif; ?>
                     </div>
+                    <div class="collapse navbar-collapse navbar-1-collapse">
                     <?php
                         wp_nav_menu( array(
                         'theme_location'    => 'main_menu',
                         'depth'             => 2,
-                        'container'         => 'div',
-                        'container_class'   => 'collapse navbar-collapse navbar-1-collapse',
+                        'container'         => 'false',
                         'menu_class'        => 'nav navbar-nav',
                         'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
                         'walker'            => new wp_bootstrap_navwalker())
                         );
                     ?>
-                    
+                    <?php dynamic_sidebar( 'Navbar Search' ); ?>
+                    <ul class="nav navbar-nav navbar-right">
+                    <?php dynamic_sidebar( 'Top Navbar Social Icons' ); ?>
+                    </ul>
+                    </div>
                 </div>
             </nav>
         </div>

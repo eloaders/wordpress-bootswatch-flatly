@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Page Static
+ * Template Name: Widgets Install I-Nex Template
  *
  * Page template for
  *
@@ -14,10 +14,13 @@ get_header(); ?>
 
 <?php get_template_part('template-part', 'topnav'); ?>
 
-<?php get_template_part('template-part', 'carousel'); ?>
 
-<?php get_template_part('template-part', 'jumbotron'); ?>
+	<!-- Main Content -->	
 
-<?php get_template_part('template-part', 'hero'); ?>
+	<!-- End Main Content -->	
 
+<div class="container">
+    <?php dynamic_sidebar( 'I-Nex Install Page' ); ?>
+</div>
 <?php get_footer(); ?>
+

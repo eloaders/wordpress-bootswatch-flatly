@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-2-collapse">
-        <span class="sr-only"><?php _e('Toggle navigation','devdmbootstrap3'); ?></span>
+        <span class="sr-only"><?php _e('Toggle navigation','wordpress_bootstrap_flatly'); ?></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>

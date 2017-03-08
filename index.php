@@ -19,8 +19,9 @@
 
                  $total_results = $wp_query->found_posts;
 
-                 echo "<h2 class='page-header'>" . sprintf( __('%s Search Results for "%s"','devdmbootstrap3'),  $total_results, get_search_query() ) . "</h2>";
-
+                 echo "<div class='alert alert-dismissible alert-info'>";
+                 echo "". sprintf( __('<strong>%s Search Results for</strong>"%s"','wordpress_bootstrap_flatly'),  $total_results, get_search_query() ) . "</a>";
+                 echo "</div>";
                  if ($total_results == 0) :
                      get_search_form(true);
                  endif;
@@ -44,16 +45,14 @@
                                 <div class="post-header well well-sm">
                                     <span class="glyphicon glyphicon-user"></span> <?php the_author_posts_link(); ?>
                                     <span class="glyphicon glyphicon-time"></span> <?php the_time('F jS, Y'); ?>
-                                    <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','devdmbootstrap3')); ?>
+                                    <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','wordpress_bootstrap_flatly')); ?>
                                     <p class="text-right">
-                                    <span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','devdmbootstrap3'); ?>: <?php the_category(', '); ?></p>
+                                    <span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','wordpress_bootstrap_flatly'); ?>: <?php the_category(', '); ?></p>
                                     <?php if( has_tag() ) : ?>
                                         <p class="text-right"><span class="glyphicon glyphicon-tags"></span>
                                             <?php the_tags(); ?>
                                         </p>
                                     <?php endif; ?>
-                                    </span>
-                                    <span class="post-comment-link pull-right"><a class="comment-link" href="/news?post=<%Print rPosts!ID%>#disqus_thread" onclick=""><script id="dsq-count-scr" src="//cerbero.disqus.com/count.js" async></script></a>
                                     </span>
                                 </div>
                             <div>
@@ -84,16 +83,16 @@
                                 <div class="post-header well well-sm">
                                     <span class="glyphicon glyphicon-user"></span> <?php the_author_posts_link(); ?>
                                     <span class="glyphicon glyphicon-time"></span> <?php the_time('F jS, Y'); ?>
-                                    <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','devdmbootstrap3')); ?>
+                                    <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','wordpress_bootstrap_flatly')); ?>
                                     <p class="text-right">
-                                        <span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','devdmbootstrap3'); ?>: <?php the_category(', '); ?></p>
-                                            <?php if( has_tag() ) : ?>
-                                                <p class="text-right"><span class="glyphicon glyphicon-tags"></span>
-                                                <?php the_tags(); ?>
-                                                </p>
-                                            <?php endif; ?>
-                                        </span>
-                                        <span class="post-comment-link pull-right"><a class="comment-link" href="/news?post=<%Print rPosts!ID%>#disqus_thread" onclick=""><script id="dsq-count-scr" src="//cerbero.disqus.com/count.js" async></script></a></span>
+                                        <span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','wordpress_bootstrap_flatly'); ?>: <?php the_category(', '); ?>
+                                    </p>
+                                    <?php if( has_tag() ) : ?>
+                                        <p class="text-right"><span class="glyphicon glyphicon-tags"></span>
+                                        <?php the_tags(); ?>
+                                        </p>
+                                    <?php endif; ?>
+                                    </span>
                                 </div>
                                 <div>
                                     <span class="thumbnail" style="float:left; margin-right: 10px;"><img alt="" border="0" src="<?php the_post_thumbnail_url(); ?>" title=""  class="img-responsive" width="300px" height="200px"></span>
@@ -103,7 +102,7 @@
                         </div>
                         <?php  if ( comments_open() ) : ?>
                         <div class="panel-footer clearfix">
-                            <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm pull-right" role="button"><?php comments_number(__('Leave a Comment','devdmbootstrap3'), __('One Comment','devdmbootstrap3'), '%' . __(' Comments','devdmbootstrap3') );?><span class="glyphicon glyphicon-chevron-right"></span></a>
+                            <a href="<?php the_permalink(); ?>" class="btn btn-primary btn-sm pull-right" role="button"><?php comments_number(__('Leave a Comment','wordpress_bootstrap_flatly'), __('One Comment','wordpress_bootstrap_flatly'), '%' . __(' Comments','wordpress_bootstrap_flatly') );?><span class="glyphicon glyphicon-chevron-right"></span></a>
                         </div>
                         <?php endif; ?>
                     </article>
