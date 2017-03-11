@@ -16,7 +16,7 @@ get_header(); ?>
 
 <div class="container">
     <div class="page-header">
-        <p class="text-center"><h2>I-Nex in Youtube</h2></p>
+        <p class="text-center"><h2><?php the_title() ;?></h2></p>
     </div>
     <div class="timeline">
         <div class="line text-muted"></div>

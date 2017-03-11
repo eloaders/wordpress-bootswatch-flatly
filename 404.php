@@ -25,8 +25,8 @@
             <ul class="list-group">
               <li class="list-group-item">Make sure that the Web site address displayed in the address bar of your browser is spelled and formatted correctly.</li>
               <li class="list-group-item">If you reached this page by clicking a link,
-                <a href="#"><b>contwordpress_bootstrap_flatlyact us</b></a> to alert us that the link is incorrectly formatted.</li>
-                <li class="list-group-item">Forget that this ever happened, and go <a href="/">our <b>Home</b> page</a> :)</li>
+                <a href="#"><b>contact us</b></a> to alert us that the link is incorrectly formatted.</li>
+                <li class="list-group-item">Forget that this ever happened, and go to <a href="/">our <b>Home</b> page</a> :)</li>
               </ul>
           </div>
         </div>
