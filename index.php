@@ -3,7 +3,10 @@
 <?php get_template_part('template-part', 'head'); ?>
 
 <?php get_template_part('template-part', 'topnav'); ?>
-
+<?php
+$user = wp_get_current_user();
+$allowed_roles = array('editor', 'administrator', 'author');
+?>
 <!-- start content container -->
 <div class="container">
   <div class="row">
@@ -45,7 +48,11 @@
                                 <div class="post-header well well-sm">
                                     <span class="glyphicon glyphicon-user"></span> <?php the_author_posts_link(); ?>
                                     <span class="glyphicon glyphicon-time"></span> <?php the_time('F jS, Y'); ?>
+                                    <?php if( array_intersect($allowed_roles, $user->roles ) ) {  ?> 
                                     <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','wordpress_bootstrap_flatly')); ?>
+                                    <?php } ?>
+                                    
+                                    
                                     <p class="text-right">
                                     <span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','wordpress_bootstrap_flatly'); ?>: <?php the_category(', '); ?></p>
                                     <?php if( has_tag() ) : ?>
@@ -83,7 +90,9 @@
                                 <div class="post-header well well-sm">
                                     <span class="glyphicon glyphicon-user"></span> <?php the_author_posts_link(); ?>
                                     <span class="glyphicon glyphicon-time"></span> <?php the_time('F jS, Y'); ?>
+                                    <?php if( array_intersect($allowed_roles, $user->roles ) ) {  ?> 
                                     <span class="glyphicon glyphicon-edit"></span> <?php edit_post_link(__('Edit','wordpress_bootstrap_flatly')); ?>
+                                    <?php } ?>
                                     <p class="text-right">
                                         <span class="glyphicon glyphicon-circle-arrow-right"></span> <?php _e('Posted In','wordpress_bootstrap_flatly'); ?>: <?php the_category(', '); ?>
                                     </p>
