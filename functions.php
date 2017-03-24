@@ -5,8 +5,8 @@
 ////////////////////////////////////////////////////////////////////
 
     $themename = "wordpress_bootstrap_flatly";
-    $developer_uri = "http://Wbf.com";
-    $shortname = "dm";
+    $developer_uri = "http://i-nex.linux.pl/";
+    $shortname = "wbf";
     $version = '1.80';
     load_theme_textdomain( 'wordpress_bootstrap_flatly', get_template_directory() . '/languages' );
 
@@ -111,6 +111,9 @@ function create_post_type() {
     require_once('lib/bootstrap-page-install-widget.php');
     require_once('lib/bootstrap-page-youtube-widget.php');
     require_once('lib/bootstrap-navbar-search-widget.php');
+    require_once('lib/bootstrap-google-adsense-widget.php');
+    require_once('lib/bootstrap-page-install-adsense-widget.php');
+    
 ////////////////////////////////////////////////////////////////////
 // Register Menus
 ////////////////////////////////////////////////////////////////////
