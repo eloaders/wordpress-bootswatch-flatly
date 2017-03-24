@@ -6,7 +6,7 @@
             <nav class="navbar navbar-default">
                 <div class="container-fluid">
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
@@ -16,7 +16,7 @@
                         <a class="navbar-brand" href="<?php echo of_get_option('navbar_brand_url'); ?>"><?php echo of_get_option('navbar_brand_text'); ?></a>
                         <?php endif; ?>
                     </div>
-                    <div class="collapse navbar-collapse navbar-1-collapse">
+                    <div class="navbar-collapse collapse" id="navbar-collapse-1" aria-expanded="false" style="height: 1px;">
                     <?php
                         wp_nav_menu( array(
                         'theme_location'    => 'main_menu',
