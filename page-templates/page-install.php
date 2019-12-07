@@ -23,7 +23,7 @@ get_header(); ?>
 
     <!-- Page header -->
     <div class="page-header">
-        <p class="text-center"><h2>Install I-Nex in your favorite linux distribution</h2></p>
+        <p class="text-center"><h2><?php the_title() ;?></h2></p>
     </div>
     <!-- /Page header -->
 
